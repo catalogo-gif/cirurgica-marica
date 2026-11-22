@@ -8,6 +8,64 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
+<style>
+/* estilos do banner do cupom: ficam aqui para funcionar mesmo com o style.css antigo */
+/* ===== banner do cupom, garantias e retorno do cliente ===== */
+.s0{background:radial-gradient(circle at 85% 30%,#13607a 0,transparent 55%),linear-gradient(120deg,#0B2A3C 0%,#0E5866 60%,#0E7C86 100%)}
+.s0 .tag{background:var(--coral);backdrop-filter:none}
+.s0 h2{font-size:36px}
+.ctas{display:flex;gap:10px;flex-wrap:wrap}
+.slide .cta.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.6)}
+.slide .cta.ghost:hover{background:rgba(255,255,255,.12)}
+.promise{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+.pr{display:flex;gap:12px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.pr .ic{width:42px;height:42px;border-radius:12px;background:var(--teal-l);color:var(--teal);display:grid;place-items:center;flex-shrink:0}
+.pr .ic svg{width:22px;height:22px}
+.pr b{display:block;font-size:14.5px;color:var(--navy);margin-bottom:2px;line-height:1.25}
+.pr span{font-size:12.5px;color:var(--muted);line-height:1.4}
+.pct{flex-shrink:0;display:grid;place-items:center;background:var(--coral);color:#fff;font-weight:800;border-radius:12px;letter-spacing:-.5px}
+.coupon-box{background:#fff;border:2px dashed #f3b3a4;border-radius:20px;padding:28px}
+.cb-head{display:flex;gap:16px;align-items:center;margin-bottom:22px}
+.cb-head .pct{width:64px;height:64px;font-size:24px}
+.cb-head h3{font-size:24px;font-weight:800;color:var(--navy);letter-spacing:-.4px}
+.cb-head p{color:var(--muted);font-size:15px}
+.cb-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.cb-steps>div{background:var(--bg);border-radius:var(--r);padding:16px}
+.cb-steps .n{width:32px;height:32px;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;display:grid;place-items:center;margin-bottom:10px;font-size:14px}
+.cb-steps b{display:block;color:var(--navy);font-size:15px;margin-bottom:2px}
+.cb-steps span{font-size:13px;color:var(--muted)}
+.cb-foot{display:flex;align-items:center;gap:18px;margin-top:20px;flex-wrap:wrap}
+.cb-foot small{flex:1;min-width:240px;font-size:12px;color:var(--muted)}
+.wa-btn{display:inline-flex;align-items:center;gap:8px;background:#25D366;color:#fff;font-weight:700;padding:12px 20px;border-radius:999px;font-size:14.5px;white-space:nowrap}
+.wa-btn:hover{background:#1ebe5b}
+.m-coupon{display:flex;gap:12px;align-items:center;background:#FFF1EC;border:1px dashed #f3b3a4;border-radius:12px;padding:12px;margin:0 0 14px;font-size:13px;color:var(--text)}
+.m-coupon .pct{width:44px;height:44px;font-size:15px}
+.m-coupon b{display:block;color:var(--navy);font-size:14px}
+.back-bar{position:fixed;left:50%;bottom:18px;transform:translate(-50%,140%);z-index:90;display:flex;align-items:center;gap:14px;background:#fff;border-radius:16px;padding:12px 14px;box-shadow:0 14px 40px rgba(11,42,60,.25);max-width:calc(100% - 24px);width:640px;transition:transform .35s ease}
+.back-bar.on{transform:translate(-50%,0)}
+.back-bar .pct{width:46px;height:46px;font-size:15px}
+.bb-txt{flex:1;font-size:13.5px;color:var(--text)}
+.bb-txt b{color:var(--navy)}
+.bb-txt #bbProd{color:var(--muted)}
+.bb-x{width:30px;height:30px;border-radius:50%;background:var(--bg);font-size:18px;flex-shrink:0}
+@media (max-width:980px){ .promise,.cb-steps{grid-template-columns:repeat(2,1fr)} }
+@media (max-width:700px){
+  .s0 h2{font-size:26px}
+  .s0 .art{opacity:.14}
+  .promise{grid-template-columns:1fr 1fr;gap:8px}
+  .pr{padding:12px;flex-direction:column;gap:8px}
+  .pr span{display:none}
+  .cb-steps{grid-template-columns:1fr 1fr}
+  .coupon-box{padding:20px}
+  .back-bar{flex-wrap:wrap}
+  .back-bar .wa-btn{flex:1;justify-content:center}
+}
+.s0 .txt{max-width:600px}
+.dots{bottom:16px}
+@media (max-width:700px){ .slider{height:400px} .slide .cta.ghost{display:none} }
+#cupom,#produtos,#como-funciona{scroll-margin-top:120px}
+.slider:hover .dots button.on{opacity:.7}
+</style>
 </head>
 <body>
 <a href="#produtos" class="skip">Pular para os produtos</a>
@@ -98,10 +156,10 @@
   </div>
 
   <div class="promise" aria-label="Nossos compromissos">
-    <div class="pr"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg></div><div><b>Parceiros escolhidos a dedo</b><span>Só indicamos lojas e vendedores que avaliamos com cuidado.</span></div></div>
-    <div class="pr"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.2 7 22l5-3 5 3-1.2-8.8"/></svg></div><div><b>Qualidade e procedência</b><span>Produtos novos, de marcas e fornecedores reconhecidos.</span></div></div>
-    <div class="pr"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></div><div><b>Pós-venda e suporte ágil</b><span>Algum problema com o pedido? Nosso WhatsApp ajuda você a resolver.</span></div></div>
-    <div class="pr"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><div><b>Compra e dados protegidos</b><span>Pagamento no ambiente seguro da loja. Nunca pedimos dados do seu cartão.</span></div></div>
+    <div class="pr"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5 3.4 9.3 8 11 4.6-1.7 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/></svg></div><div><b>Parceiros escolhidos a dedo</b><span>Só indicamos lojas e vendedores que avaliamos com cuidado.</span></div></div>
+    <div class="pr"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M8.2 13.2 7 22l5-3 5 3-1.2-8.8"/></svg></div><div><b>Qualidade e procedência</b><span>Produtos novos, de marcas e fornecedores reconhecidos.</span></div></div>
+    <div class="pr"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/><path d="M8 9h8M8 13h5"/></svg></div><div><b>Pós-venda e suporte ágil</b><span>Algum problema com o pedido? Nosso WhatsApp ajuda você a resolver.</span></div></div>
+    <div class="pr"><div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div><div><b>Compra e dados protegidos</b><span>Pagamento no ambiente seguro da loja. Nunca pedimos dados do seu cartão.</span></div></div>
   </div>
 
   <div class="stores">Ofertas das lojas parceiras:
@@ -458,8 +516,17 @@ function go(n){
   slides[cur].classList.remove("on"); dots[cur].classList.remove("on");
   cur = (n+slides.length)%slides.length;
   slides[cur].classList.add("on"); dots[cur].classList.add("on");
-  clearInterval(timer); timer = setInterval(()=>go(cur+1), 6000);
+  agendar();
 }
+function agendar(){
+  clearTimeout(timer);
+  if (pausado) return;
+  timer = setTimeout(()=>go(cur+1), slides[cur].classList.contains("s0") ? 15000 : 8000);
+}
+let pausado = false;
+$("#slider").addEventListener("mouseenter", ()=>{ pausado = true; clearTimeout(timer); });
+$("#slider").addEventListener("mouseleave", ()=>{ pausado = false; agendar(); });
+$("#slider").addEventListener("touchstart", ()=>{ pausado = true; clearTimeout(timer); setTimeout(()=>{ pausado = false; agendar(); }, 20000); }, {passive:true});
 dots.forEach((d,i)=>d.onclick=()=>go(i));
 $("#prev").onclick=()=>go(cur-1); $("#next").onclick=()=>go(cur+1);
 
